@@ -7,7 +7,7 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
-	background-image: url(./UI/img/bg.jpg);
+	background: linear-gradient(to bottom left, rgb(127, 255, 246) 50%, #0091e6 50%);
 }
 @media (prefers-reduced-motion: no-preference) {
 	body {
