@@ -7,7 +7,7 @@ import Button from '../UI/Button'
 import { useDispatch, useSelector } from 'react-redux'
 import { authActions } from '../store/isAuthenticatedSlice'
 import { useNavigate } from 'react-router'
-
+import Task from '../UI/img/task.svg'
 
 const Login = () => {
 	const navigate = useNavigate()
@@ -39,35 +39,39 @@ const Login = () => {
 
 	return (
 		<>
+
+
 			<FormController>
-				<Logo />
-				<form onSubmit={submitHandler}>
-
-					<h3>Вход в Тrello</h3>
-					<div className='form-control'>
-						<Input
-							value={userEmail.value}
-							onChange={userEmail.onChange}
-							type='email'
-							isValidInput={userEmail.valueInputIsInValid}
-							onBlur={userEmail.onBlur}
-							placeholder='Укажите адрес электронной почты'
-						/>
-
-					</div>
-					<div className='form-control'>
-						<Input
-							type='password'
-							placeholder='Введите пароль'
-							value={userPassword.value}
-							onChange={userPassword.onChange}
-							onBlur={userPassword.onBlur}
-							isValidInput={userPassword.valueInputIsInValid}
-						/>
-					</div>
-					<Button disabled={!formIsValid} type='submit'>Войти</Button>
-
-				</form>
+				<div className='left'>
+					<img src={Task} alt='check' />
+				</div>
+				<div className='center'>
+					<Logo />
+					<form onSubmit={submitHandler}>
+						<h3>Вход в Тrello</h3>
+						<div className='form-control'>
+							<Input
+								value={userEmail.value}
+								onChange={userEmail.onChange}
+								type='email'
+								isValidInput={userEmail.valueInputIsInValid}
+								onBlur={userEmail.onBlur}
+								placeholder='Укажите адрес электронной почты'
+							/>
+						</div>
+						<div className='form-control'>
+							<Input
+								type='password'
+								placeholder='Введите пароль'
+								value={userPassword.value}
+								onChange={userPassword.onChange}
+								onBlur={userPassword.onBlur}
+								isValidInput={userPassword.valueInputIsInValid}
+							/>
+						</div>
+						<Button disabled={!formIsValid} type='submit'>Войти</Button>
+					</form>
+				</div>
 			</FormController>
 		</>
 	)
@@ -76,7 +80,17 @@ const Login = () => {
 const FormController = styled.div`
 	width: 100%;
 	height: 80vh;
-	/* display: flex; */
+	display: flex;
+	justify-content: space-between;
+	margin-top: 120px;
+	& .left{
+		width: 80px;
+		margin-left: 40px;
+	}
+	& .center{
+		width: 1200px;
+		margin: 0 auto;
+	}
 	form {
 		width: 440px;
 		height: 310px;
@@ -108,17 +122,18 @@ const FormController = styled.div`
 			display: flex;
 			align-items: center;
 			justify-content: space-evenly;
-			a {
+			/* a {
 				font-size: 12px;
 				color: #598ede;
-			}
+			} */
 		}
 	}
 	h3 {
-				color: #598ede;
-		/* color: #56efef; */
-		
+		color: #598ede;		
 	}
 `
 
 export default Login
+
+
+
