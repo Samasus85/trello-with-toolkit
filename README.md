@@ -1,3 +1,6 @@
+Copyright © 2021 By S@m@r@
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
